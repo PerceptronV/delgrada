@@ -11,7 +11,9 @@ _Lightweight, minimal tensor-/scalar- based autograd engine._
 
 ## About
 
-The code in this repository is inspired by Andrej Karpathy's [micrograd](https://github.com/karpathy/micrograd) but extends it for tensor-valued operations. The main purpose of this repository is education and fun.
+The code in this repository is the product of a long-haul flight. Bored and without Internet access, naturally, I decided to build an autograd library.
+
+`delgrada` is built mainly for fun and education. It is inspired by Andrej Karpathy's [micrograd](https://github.com/karpathy/micrograd) library, but seeks to generalise for tensor-valued operations.
 
 ## Cool Features
 
