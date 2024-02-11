@@ -23,7 +23,7 @@ setup(
         "Topic :: Scientific/Engineering :: Mathematics",
         "Topic :: Software Development",
         "License :: OSI Approved :: MIT License",
-        "Programming Language :: Python :: 3"
+        "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ],
     keywords="autograd, deep-learning, mathematics, education",
