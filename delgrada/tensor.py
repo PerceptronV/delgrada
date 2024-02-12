@@ -320,13 +320,13 @@ class Tensor():
         self.grad = self._zero
     
     
-    def reset(self):
+    def zero_tree(self):
         tree = self._build_tree()
         for node in tree:
             node.grad = node._zero.copy()
     
     
-    def collapse(self):
+    def collapse_tree(self):
         tree = self._build_tree()
         for node in tree:
             node.grad = node._zero.copy()

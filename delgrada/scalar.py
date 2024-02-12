@@ -158,13 +158,13 @@ class Scalar():
         self.grad = 0
     
     
-    def reset(self):
+    def zero_tree(self):
         tree = self._build_tree()
         for node in tree:
             node.grad = 0
     
     
-    def collapse(self):
+    def collapse_tree(self):
         tree = self._build_tree()
         for node in tree:
             node.grad = 0
