@@ -1,6 +1,6 @@
 from delgrada.tensor import Tensor
 
-from delgrada.tensops import shape
+from delgrada.tensops import shape, transpose, full
 from delgrada.tensops import exp, log, sin, cos
 
 from delgrada.dtype import *

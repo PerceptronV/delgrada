@@ -19,14 +19,15 @@ def transpose(t: Tensor, axes=None):
                     children=[t])
 
 
-def fill(shape, val, dtype=np.float64):
+def full(shape, val, dtype=np.float64):
     val = check(val)
-    assert val.ndim == 0, "`fill` only takes in scalar values"
+    if dtype is None: dtype = val.dtype
+    assert val.ndim == 0, "`full` only takes in scalar values"
     
     def _back(output):
         val.grad += np.sum(output.grad)
-    
-    return Tensor(np.full(shape, val, dtype=dtype),
+            
+    return Tensor(np.full(shape, val.value, dtype=dtype),
                   op='f',
                   backfunc=_back,
                   children=[val])
