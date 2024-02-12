@@ -1,9 +1,22 @@
 import numpy as np
-from delgrada.tensor import check, Tensor
+from delgrada.tensor import Tensor
+from delgrada.tensor import check, _safe_transpose
 
 
 def shape(t: Tensor):
     return np.shape(t.value)
+
+
+def transpose(t: Tensor, axes=None):
+    trans, ax = _safe_transpose(t.value, axes)
+    
+    def _back(output):
+        t.grad += np.transpose(output.grad, ax)
+    
+    return Tensor(trans,
+                    op='T',
+                    backfunc=_back,
+                    children=[t])
 
 
 def fill(shape, val, dtype=np.float64):

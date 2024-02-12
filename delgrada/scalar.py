@@ -154,13 +154,17 @@ class Scalar():
             node._backfunc(node)
     
     
-    def _reset(self):
+    def zero_grad(self):
+        self.grad = 0
+    
+    
+    def reset(self):
         tree = self._build_tree()
         for node in tree:
             node.grad = 0
     
     
-    def _burn(self):
+    def collapse(self):
         tree = self._build_tree()
         for node in tree:
             node.grad = 0
