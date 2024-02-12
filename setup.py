@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="delgrada",
-    version="0.1.0",
+    version="0.1.2",
     description="Lightweight, minimal tensor-/scalar- based autograd engine.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -27,7 +27,7 @@ setup(
         "Operating System :: OS Independent",
     ],
     keywords="autograd, deep-learning, mathematics, education",
-    package_dir={"": "delgrada"},
+    packages=find_packages(),
     python_requires=">=3.7, <4",
     install_requires=["numpy"],
     project_urls={
